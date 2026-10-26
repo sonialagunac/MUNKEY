@@ -519,7 +519,6 @@ class BaseModule(pl.LightningModule):
             if self.rmia_enabled:
                 self._populate_rmia_buffers(un_buf)
 
-            # tow still based on acc (unchanged)
             f_acc = torch.stack(base_buf["forget"]["acc"])
             t_acc = torch.stack(base_buf[prefix]["acc"])
             r_acc = torch.stack(base_buf["retain"]["acc"])
@@ -533,7 +532,7 @@ class BaseModule(pl.LightningModule):
             self.log(f"{prefix}_retain/tow", retain_tow, add_dataloader_idx=False)
             self.log(f"{prefix}_{prefix}/tow",   test_tow,   add_dataloader_idx=False)
             suffix = "" if prefix == "test" else "_unlearn"
-            # now per-metric MIA_unlearn
+            # per-metric MIA_unlearn
             for metric_name, larger_is_member in metric_cfg.items():
                 if (
                     len(un_buf["forget"][metric_name]) == 0
