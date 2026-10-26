@@ -1,0 +1,8 @@
+defaults:
+  - config_base
+  - override dataset: cifar10
+  - _self_
+
+mode:
+  image_dropout_prob: 0.1
+  token_dropout_prob: 0.3

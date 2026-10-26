@@ -1,0 +1,12 @@
+torch==2.8.0
+torchvision==0.23.0
+transformers==4.52.4
+lightning==2.6.0
+torchmetrics==1.8.2
+hydra-core==1.3.2
+omegaconf==2.3.0
+numpy==2.0.2
+scikit-learn==1.6.1
+medmnist==3.0.2
+Pillow==11.3.0
+wandb==0.24.0
